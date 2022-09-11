@@ -43,10 +43,10 @@ function addStar() {
 
 Array(200).fill().forEach(addStar);
 
-const spaceTexture = new THREE.TextureLoader().load('space.jpg');
+const spaceTexture = new THREE.TextureLoader().load('./space.jpg');
 scene.background = spaceTexture;
 
-const heheTexture = new THREE.TextureLoader().load('hehe.png');
+const heheTexture = new THREE.TextureLoader().load('./hehe.png');
 
 const hehe = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3),
@@ -95,7 +95,7 @@ scene.add(cuboraro2);
 cuboraro2.position.z = 20;
 cuboraro2.position.setX(10);
 
-const jupiterTexture = new THREE.TextureLoader().load('jupiter.jpg');
+const jupiterTexture = new THREE.TextureLoader().load('./jupiter.jpg');
 
 const jupiter = new THREE.Mesh(
   new THREE.SphereGeometry(15, 32, 32),
@@ -110,8 +110,8 @@ jupiter.position.z = -30;
 jupiter.position.y = 30;
 jupiter.position.x = 30;
 
-const moonTexture = new THREE.TextureLoader().load('moon.jpg');
-const normalTexture = new THREE.TextureLoader().load('normal.jpg');
+const moonTexture = new THREE.TextureLoader().load('./moon.jpg');
+const normalTexture = new THREE.TextureLoader().load('./normal.jpg');
 
 const moon = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
