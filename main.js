@@ -110,7 +110,7 @@ jupiter.position.z = -30;
 jupiter.position.y = 30;
 jupiter.position.x = 30;
 
-const moonTexture = new THREE.TextureLoader().load('./moon.jpg');
+const moonTexture = new THREE.TextureLoader().load('/moon.jpg');
 const normalTexture = new THREE.TextureLoader().load('./normal.jpg');
 
 const moon = new THREE.Mesh(
