@@ -24,10 +24,6 @@ pointLight.position.set( 5, 5, 5 );
 const ambientLight = new THREE.AmbientLight( 0xffffff );
 scene.add( pointLight, ambientLight );
 
-// const lightHelper = new THREE.PointLightHelper( pointLight )
-// const gridHelper = new THREE.GridHelper( 200, 50 );
-// scene.add(lightHelper, gridHelper)
-
 const controls = new OrbitControls(camera, renderer.domElement);
 
 function addStar() {
@@ -110,7 +106,7 @@ jupiter.position.z = -30;
 jupiter.position.y = 30;
 jupiter.position.x = 30;
 
-const moonTexture = new THREE.TextureLoader().load('/moon.jpg');
+const moonTexture = new THREE.TextureLoader().load('moon.jpg');
 const normalTexture = new THREE.TextureLoader().load('./normal.jpg');
 
 const moon = new THREE.Mesh(
