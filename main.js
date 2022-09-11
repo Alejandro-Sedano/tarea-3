@@ -13,10 +13,23 @@ camera.position.z = 30;
 document.body.appendChild( renderer.domElement );
 
 const torus = new THREE.Mesh( 
-  new THREE.TorusGeometry( 15, 3, 16, 100 ),
+  new THREE.TorusGeometry( 15, 1, 16, 100 ),
   new THREE.MeshStandardMaterial( { color: 0xffff00 } ) 
 );
 scene.add( torus );
+
+const torus2 = new THREE.Mesh(
+  new THREE.TorusGeometry( 9, 1, 16, 100 ),
+  new THREE.MeshStandardMaterial( { color: 0x00ffff } )
+);
+scene.add( torus2 );
+
+const torus3 = new THREE.Mesh(
+  new THREE.TorusGeometry( 4, 1, 16, 100 ),
+  new THREE.MeshStandardMaterial( { color: 0xff00ff } )
+);
+scene.add(torus3);
+
 
 const pointLight = new THREE.PointLight( 0xffffff );
 pointLight.position.set( 5, 5, 5 );
@@ -143,8 +156,12 @@ document.body.onscroll = moveCamera;
 function animate() {
 	requestAnimationFrame( animate );
   
-  torus.rotation.x += 0.05;
-  torus.rotation.y += 0.05;
+  torus.rotation.x += 0.01;
+
+  torus2.rotation.y -= 0.01;
+
+  torus3.rotation.x += 0.01;
+  torus3.rotation.y -= 0.01;
 
   cubo.rotation.x += 0.005;
   cubo.rotation.y += 0.005;
