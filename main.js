@@ -18,6 +18,18 @@ const torus = new THREE.Mesh(
 );
 scene.add( torus );
 
+const octaTexture = new THREE.TextureLoader().load('gato.png');
+
+const octa = new THREE.Mesh(
+  new THREE.OctahedronGeometry( 3, 0 ),
+  new THREE.MeshStandardMaterial( { map: octaTexture } )
+);
+
+octa.position.z = -45;
+octa.position.x = 50;
+
+scene.add(octa);
+
 const torus2 = new THREE.Mesh(
   new THREE.TorusGeometry( 9, 1, 16, 100 ),
   new THREE.MeshStandardMaterial( { color: 0x00ffff } )
@@ -119,6 +131,29 @@ jupiter.position.z = -30;
 jupiter.position.y = 30;
 jupiter.position.x = 30;
 
+const obamaTexture = new THREE.TextureLoader().load('./smileobama.png');
+const obamaTexture2 = new THREE.TextureLoader().load('./obama.png');
+
+const obamaTetradrone = new THREE.Mesh(
+  new THREE.TetrahedronGeometry( 3, 0 ),
+  new THREE.MeshStandardMaterial( { map: obamaTexture } )
+);
+
+scene.add(obamaTetradrone);
+
+obamaTetradrone.position.z = -45;
+obamaTetradrone.position.x = -50;
+
+const obamaSphere = new THREE.Mesh(
+  new THREE.SphereGeometry(3, 32, 32),
+  new THREE.MeshStandardMaterial({ map: obamaTexture })
+);
+
+scene.add(obamaSphere);
+
+obamaSphere.position.z = -45;
+obamaSphere.position.x = -60;
+
 const moonTexture = new THREE.TextureLoader().load('moon.jpg');
 const normalTexture = new THREE.TextureLoader().load('./normal.jpg');
 
@@ -144,6 +179,9 @@ function moveCamera() {
 
   hehe.rotation.y += 0.01;
   hehe.rotation.z += 0.01;
+
+  obamaTetradrone.rotation.x += 0.01;
+  obamaTetradrone.rotation.y += 0.01;
 
   camera.position.z = t * -0.01;
   camera.position.x = t * -0.0002;
@@ -176,6 +214,11 @@ function animate() {
   cuboraro2.rotation.y -= 0.005;
 
   jupiter.rotation.y += 0.001;
+
+  octa.rotation.x += 0.01;
+  octa.rotation.y += 0.01;
+
+  obamaSphere.rotation.y += 0.01;
   
 
   controls.update();
